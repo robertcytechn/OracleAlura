@@ -3,9 +3,9 @@ public class MonedasOBJ {
     private double valor;
     private String moneda;
     
-    public MonedasOBJ(double valor, String moneda) {
-        this.valor = valor;
-        this.moneda = moneda;
+    public MonedasOBJ(double valorV, String monedaV) {
+        this.valor = valorV;
+        this.moneda = monedaV;
     }
 
     public double getValor() {
