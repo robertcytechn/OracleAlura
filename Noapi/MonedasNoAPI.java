@@ -1,8 +1,8 @@
-public class Monedas {
+public class MonedasNoAPI {
     public Double valor;
     public String nombre;
 
-    public Monedas(String nombre, Double valor){
+    public MonedasNoAPI(String nombre, Double valor){
         this.nombre = nombre;
         this.valor = valor;
     }
@@ -15,7 +15,7 @@ public class Monedas {
         return cantidad * this.valor;
     }
 
-    public Double convertirA(Double cantidad, Monedas moneda){
+    public Double convertirA(Double cantidad, MonedasNoAPI moneda){
         return cantidad * this.valor / moneda.valor;
     }
     

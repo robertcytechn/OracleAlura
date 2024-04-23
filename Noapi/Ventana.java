@@ -27,6 +27,11 @@ public class Ventana extends JFrame{
     // 1 won = 0.018 pesos mexicanos
     // 1 libra esterlina = 28.00 pesos mexicanos
 
+    // sacamos los valores de las monedas de internet con un api
+    
+
+
+
     private double dolar = 17.12;
     private double euro = 18.25;
     private double yen = 0.18;
