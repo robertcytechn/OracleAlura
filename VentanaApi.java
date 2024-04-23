@@ -20,10 +20,6 @@ public class VentanaApi {
     private JButton botonConvertir;
     private JButton botonCerrar;
 
-    private JLabel labelValoresMonedas;
-    private JLabel labelValoresMonedas1;
-    private JLabel labelValoresMonedas2;
-
     public APIGET apiGet;
 
     public VentanaApi(){
@@ -133,7 +129,7 @@ public class VentanaApi {
             // mostramos el resultado
             JOptionPane.showMessageDialog(null, "El resultado de " + cantidad + " " + monedaDe + " a "+ monedaA + " = " + resultado);
         });
-        
+
         ventana.setVisible(true);
     }
 }
