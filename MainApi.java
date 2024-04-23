@@ -1,11 +1,12 @@
 public class MainApi {
+    public static VentanaApi entanaApi;
     public static void main(String[] args) {
         // creamos un objeto de la clase APIGET
-        APIGET api = new APIGET();
+        entanaApi = new VentanaApi();
         
-        // imprimimos los datos de la lista de monedas
-        for (int i = 0; i < api.monedas.length; i++) {
-            System.out.println(api.monedas[i].getMoneda() + ": " + api.monedas[i].getValor());
+        // imprimimos el contenido de apiGet de ventanaApi con un for
+        for (int i = 0; i < entanaApi.apiGet.monedas.length; i++) {
+            System.out.println(entanaApi.apiGet.monedas[i].getMoneda() + " " + entanaApi.apiGet.monedas[i].getValor());
         }
     }
 }

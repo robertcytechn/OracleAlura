@@ -59,13 +59,13 @@ public class APIGET {
                         monedas[2] = new MonedasOBJ(Double.parseDouble(monedaApiData[1]), "MXN");  // pesos mexicanos
                     } 
                     else if (monedaApiData[0].contains("GBP")) {
-                        monedas[3] = new MonedasOBJ(Double.parseDouble(monedaApiData[1]), "GBP");  // libras
+                        monedas[3] = new MonedasOBJ(Double.parseDouble(monedaApiData[1]), "LIBRAS");  // libras
                     } 
                     else if (monedaApiData[0].contains("JPY")) {
-                        monedas[4] = new MonedasOBJ(Double.parseDouble(monedaApiData[1]), "JPY");  // yenes
+                        monedas[4] = new MonedasOBJ(Double.parseDouble(monedaApiData[1]), "YUNES");  // yenes
                     } 
                     else if (monedaApiData[0].contains("KRW")) {
-                        monedas[5] = new MonedasOBJ(Double.parseDouble(monedaApiData[1]), "KRW"); // wones
+                        monedas[5] = new MonedasOBJ(Double.parseDouble(monedaApiData[1]), "WONES"); // wones
                     }
                 }
             } catch (Exception e) {
@@ -74,6 +74,28 @@ public class APIGET {
             
         } catch (Exception e) {
             System.out.println("Error: " + e);
+        }
+    }
+
+    public double convertir(String monedaDe, String monedaA, double cantidad) {
+        // buscamos la moneda de origen y la moneda a la que se va a convertir en la lista de monedas
+        MonedasOBJ monedaDeOBJ = null;
+        MonedasOBJ monedaAOBJ = null;
+        for (MonedasOBJ moneda : monedas) {
+            if (moneda != null) {
+                if (moneda.getMoneda().equals(monedaDe)) {
+                    monedaDeOBJ = moneda;
+                }
+                if (moneda.getMoneda().equals(monedaA)) {
+                    monedaAOBJ = moneda;
+                }
+            }
+        }
+        // si no se encuentran las monedas se retorna 0.0
+        if (monedaDeOBJ != null && monedaAOBJ != null) {
+            return cantidad * monedaAOBJ.getValor() / monedaDeOBJ.getValor();
+        } else {
+            return 0.0;
         }
     }
 }
